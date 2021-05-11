@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+    <h2>Signed in as <%= current_user.user_name %></h2><br><br><br>
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-4">
+                <b class="font-weight-bold">Click on edit if you want to edit your profile</b>
+            </div>
+            <div class="col-4">
+                <b class="font-weight-bold">Click on delete to delete your account</b>
+            </div>
+            <div class="col-4">
+                <b class="font-weight-bold">Click on reset to reset your password</b>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2 offset-1">
+                <a class="btn btn-secondary" href="/users/edit" role="button">Edit</a>
+            </div>
+            <div class="col-2 offset-2">
+                <%= button_to "Delete", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-warning" %>
+            </div>
+            <div class="col-2 offset-2">
+                <a class="btn btn-danger disabled" href="/users/edit" role="button" aria-disabled="true">Reset</a>            </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="col-7 offset-5">
+                <b class="font-weight-bold">Show my bookings</b>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-7 offset-5">
+                <a class="btn btn-dark" href="/bookings/show_bookings" role="button">Show</a>
+            </div>
+        </div>
+    </div>
+<% else %>
+    <h2>Please sign in first!</h2>
+<% end %>

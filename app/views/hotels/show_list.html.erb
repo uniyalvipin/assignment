@@ -1,0 +1,24 @@
+<h1>
+    Hotels Available
+</h1>
+<table class="table table-striped table-dark table-hover">
+  <thead>
+    <tr>
+      <th>S.No.</th>
+      <th>Hotel Name</th>
+      <th>Capacity</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.id %></td>
+        <td><%= hotel.hotel_name %></td>
+        <td><%= hotel.capacity %></td>
+        <td><%= hotel.address %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

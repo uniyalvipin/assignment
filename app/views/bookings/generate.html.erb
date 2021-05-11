@@ -1,0 +1,55 @@
+<% if user_signed_in? %>
+    <h2>Signed in as <%= current_user.user_name %></h2><br>
+    <div class="container">
+        <div class="row row-content align-items-center">
+            <div class="col col-sm">
+                <div class="card" id="reserve">
+                    <h3 class="card-header bg-dark text-white">Book here!</h3>
+                    <div class="card-body">
+                        <form method="get" action="/bookings/insert_booking">
+                            <div class="form-group row">
+                                <label class="col-md-2 col-form-label">Number of Guests</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" name="booked[no_of_guests]" placeholder="No of guests">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <label for="hotels" class="col-md-2 col-form-label">Hotel Name</label>
+                                <div class="col-md-2">
+                                    <select id="hotels" name="booked[hotel_name]" class="form-select">
+                                        <option selected="selected" disabled="disabled" >Select the hotel</option>
+                                        <% @hotels.each do |hotel| %>
+                                        <option value="<%= hotel.hotel_name %>"><%= hotel.hotel_name %></option>
+                                        <% end %>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <label class="col-md-2 col-form-label">Date and Time</label>
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" name="booked[date]" placeholder="Date">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="time" class="form-control" name="booked[time]" placeholder="Time">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-dark">Book</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offset-md-2">
+            </div>
+
+        </div>
+    </div>
+    
+        
+    <% else %>
+        <h2>Please sign in first!</h2>
+<% end %>
