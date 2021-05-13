@@ -12,6 +12,11 @@
     </ul>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <p class="nav-link"><%= current_user.email %></p>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>

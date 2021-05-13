@@ -1,8 +1,6 @@
 class BookingsController < ApplicationController
   def show_bookings
-    @u = User.find(current_user.id)
-    @b = Booking.find_by(user_id: current_user.id)
-    @h = Hotel.find_by(hotel_name: @b.h_name)
+    @book = Booking.where(user_id: current_user.id)
   end
 
   def generate
@@ -17,6 +15,6 @@ class BookingsController < ApplicationController
   end
 
   def delete
-    Booking.find_by(user_id: current_user.id).destroy
+    Booking.where(user_id: current_user.id).destroy_all
   end
 end

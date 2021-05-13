@@ -1,9 +1,10 @@
+<br>
 <% if user_signed_in? %>
-    <h2>Signed in as <%= current_user.user_name %></h2><br>
+    <h2 style="margin-left: 80px;">Signed in as <%= current_user.user_name %> !</h2><br>
     <div class="container">
-        <div class="row row-content align-items-center">
-            <div class="col col-sm">
-                <div class="card" id="reserve">
+        <div class="row row-content justify-content-center">
+            <div class="col">
+                <div class="card">
                     <h3 class="card-header bg-dark text-white">Book here!</h3>
                     <div class="card-body">
                         <form method="get" action="/bookings/insert_booking">
@@ -42,10 +43,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="offset-md-2">
-            </div>
-
         </div>
     </div>
     
