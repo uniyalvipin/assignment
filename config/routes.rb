@@ -9,4 +9,17 @@ Rails.application.routes.draw do
   get 'bookings/show_bookings'
   get 'bookings/insert_booking'
   delete 'bookings/delete'
+  get 'bookings/show_capacity_error'
+  namespace :api do
+    namespace :v1 do
+      devise_for :users
+      get 'hotels/show_list'
+      get 'profile/user'
+      get 'bookings/generate'
+      get 'bookings/show_bookings'
+      get 'bookings/insert_booking'
+      delete 'bookings/delete'
+    end
+  end
+
 end
