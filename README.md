@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#A web application for hotel booking built on rails framework.
 
-Things you may want to cover:
+##Features
+<ul>
+  User authentication and account management
+  Hotels list with capacity and availability
+  Booking generation
+  Booking list
+  Booking cancellation
+</ul>
 
-* Ruby version
+#Dependencies
+###Framework
+Rails - 6.1.3.2
 
-* System dependencies
+Ruby - 3.0.0
 
-* Configuration
+###Gem used for authentication
+devise
+https://github.com/heartcombo/devise
 
-* Database creation
+##Frontend framework
+bootstrap 5.0.0
 
-* Database initialization
+##database
+sqlite3
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
