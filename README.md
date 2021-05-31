@@ -3,11 +3,11 @@
 # A web application for hotel booking built on rails framework.
 
 ## Features
-  User authentication and account management
-  Hotels list with capacity and availability
-  Booking generation
-  Booking list
-  Booking cancellation
+  * User authentication and account management
+  * Hotels list with capacity and availability
+  * Booking generation
+  * Booking list
+  * Booking cancellation
 
 # Dependencies
 ### Framework
